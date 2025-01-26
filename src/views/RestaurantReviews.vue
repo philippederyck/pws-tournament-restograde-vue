@@ -1,7 +1,6 @@
 <script setup>
 import DataService from "@/data/data.service";
 import {useRoute} from "vue-router";
-import {DOMPurify} from "dompurify";
 
 const route = useRoute();
 const restaurant = DataService.getRestaurantById(route.params.id);
@@ -34,7 +33,7 @@ const reviews = DataService.getReviewsByRestaurantId(route.params.id);
         </h4>
         <p
             class="card-text pt-2"
-            v-html="review.content"
+            v-safe-html="review.content"
         />
       </div>
     </div>
