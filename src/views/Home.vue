@@ -1,0 +1,16 @@
+<script setup>
+</script>
+
+<template>
+  <div class="container-fluid">
+    <div class="row m-5">
+      <div class="col-12">
+        <div class="py-5 text-center">
+          <h1 class="card-title pt-3 mb-5 font-bold">Welcome to Restograde</h1>
+          <h5 class="px-5 pb-4">Restaurant reviews, done very insecurely!</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
