@@ -1,7 +1,6 @@
 <script setup>
 import DataService from "@/data/data.service";
 import {useRoute} from "vue-router";
-import {DOMPurify} from "dompurify";
 
 const route = useRoute();
 const restaurant = DataService.getRestaurantById(route.params.id);
