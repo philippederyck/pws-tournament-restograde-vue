@@ -1,9 +1,25 @@
+<script setup>
+// Load advertisement data from our ad program
+import advertisement from "@/data/ad.js";
+
+function makeSafe(url) {
+  // Remove whitespace
+  url = url.trim();
+
+  // Replace dangerous URL pattern
+  url = url.replace("javascript:", "unsafe:");
+
+  return url;
+}
+</script>
 <template>
   <footer class="page-footer mt-auto font-small bg-light pt-2 mt-4">
     <div class="container-fluid text-center text-md-left">
       <div class="advertisement-row row m-3">
         <div id="advertisement-container" class="advertisement-col col-lg-8 offset-lg-2 text-center">
-          Want to see your advertisement here? Get in touch!
+          <a :href="makeSafe(advertisement.url)">
+            {{advertisement.text}}
+          </a>
         </div>
       </div>
     </div>
@@ -24,9 +40,3 @@
     </div>
   </footer>
 </template>
-
-<script>
-export default {
-  name: "Footer",
-};
-</script>
